@@ -46,8 +46,11 @@ class ListSourceViewHolder extends RecyclerView.ViewHolder
             private Context context;
             private WebSite webSite;
 
+        public ListSourceAdapter(Context baseContext, WebSite webSite) {
+        }
 
-    @Override
+
+        @Override
     public ListSourceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.sourse_layout, parent,false);

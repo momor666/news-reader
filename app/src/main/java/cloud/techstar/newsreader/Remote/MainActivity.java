@@ -15,6 +15,7 @@ import cloud.techstar.newsreader.Interface.NewsService;
 import cloud.techstar.newsreader.Model.WebSite;
 import cloud.techstar.newsreader.R;
 import dmax.dialog.SpotsDialog;
+import io.paperdb.Paper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     NewsService mService;
     ListSourceAdapter adapter;
-    AlertDialog dialog;
+    SpotsDialog dialog;
 
     @Override
 
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
+        } else {
+
         }
     }
 }
