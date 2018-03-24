@@ -1,4 +1,4 @@
-package cloud.techstar.newsreader.Adapter;
+package cloud.techstar.newsreader.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import cloud.techstar.newsreader.Interface.ItemClickListener;
-import cloud.techstar.newsreader.Model.WebSite;
+import cloud.techstar.newsreader.interfaces.ItemClickListener;
+import cloud.techstar.newsreader.models.WebSite;
 import cloud.techstar.newsreader.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 

@@ -1,6 +1,6 @@
-package cloud.techstar.newsreader.Interface;
+package cloud.techstar.newsreader.interfaces;
 
-import cloud.techstar.newsreader.Model.WebSite;
+import cloud.techstar.newsreader.models.WebSite;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

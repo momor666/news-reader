@@ -1,4 +1,4 @@
-package cloud.techstar.newsreader.Interface;
+package cloud.techstar.newsreader.interfaces;
 
 import android.view.View;
 

@@ -1,19 +1,17 @@
-package cloud.techstar.newsreader.Remote;
+package cloud.techstar.newsreader;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.v7.app.AlertDialog;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.google.gson.Gson;
 
-import cloud.techstar.newsreader.Adapter.ListSourceAdapter;
-import cloud.techstar.newsreader.Common.Common;
-import cloud.techstar.newsreader.Interface.NewsService;
-import cloud.techstar.newsreader.Model.WebSite;
-import cloud.techstar.newsreader.R;
+import cloud.techstar.newsreader.adapter.ListSourceAdapter;
+import cloud.techstar.newsreader.common.Common;
+import cloud.techstar.newsreader.interfaces.NewsService;
+import cloud.techstar.newsreader.models.WebSite;
 import dmax.dialog.SpotsDialog;
 import io.paperdb.Paper;
 import retrofit2.Call;
@@ -31,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     NewsService mService;
     ListSourceAdapter adapter;
     SpotsDialog dialog;
+    SwipeRefreshLayout swipeLayout;
 
     @Override
 
@@ -80,7 +79,11 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         } else {
+            adapter = new ListSourceAdapter(getBaseContext(),response.body());
+            adapter.notifyDataSetChanged();
+            listWebsite.setAdapter(adapter);
 
+            Paper.book().write("cache", new Gson().toJson(response.body()));
         }
     }
 }

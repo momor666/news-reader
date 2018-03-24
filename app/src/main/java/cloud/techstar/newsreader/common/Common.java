@@ -1,8 +1,9 @@
-package cloud.techstar.newsreader.Common;
+package cloud.techstar.newsreader.common;
 
-import cloud.techstar.newsreader.Interface.NewsService;
-import cloud.techstar.newsreader.Remote.RetrofitClient;
-import cloud.techstar.newsreader.Remote.IconBetterIdeaClient;
+import cloud.techstar.newsreader.interfaces.IconBetterIdeaService;
+import cloud.techstar.newsreader.interfaces.NewsService;
+import cloud.techstar.newsreader.remote.RetrofitClient;
+import cloud.techstar.newsreader.remote.IconBetterIdeaClient;
 
 /**
  * Created by Doljko on 3/22/2018.

@@ -1,4 +1,4 @@
-package cloud.techstar.newsreader.Model;
+package cloud.techstar.newsreader.models;
 
 /**
  * Created by Doljko on 3/22/2018.

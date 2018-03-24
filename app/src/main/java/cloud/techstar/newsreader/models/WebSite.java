@@ -1,4 +1,4 @@
-package cloud.techstar.newsreader.Model;
+package cloud.techstar.newsreader.models;
 
 import java.util.List;
 

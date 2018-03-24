@@ -1,4 +1,4 @@
-package cloud.techstar.newsreader.Remote;
+package cloud.techstar.newsreader.remote;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
