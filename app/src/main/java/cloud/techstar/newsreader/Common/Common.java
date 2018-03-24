@@ -1,7 +1,7 @@
 package cloud.techstar.newsreader.Common;
 
 import cloud.techstar.newsreader.Interface.NewsService;
-import cloud.techstar.newsreader.Remote.RetrofitCliet;
+import cloud.techstar.newsreader.Remote.RetrofitClient;
 import cloud.techstar.newsreader.Remote.IconBetterIdeaClient;
 
 /**
@@ -15,7 +15,7 @@ public class Common {
 
     public static NewsService getNewsService()
     {
-        return RetrofitCliet.getClient(BASE_URL).create(NewsService.class);
+        return RetrofitClient.getClient(BASE_URL).create(NewsService.class);
     }
 
     public static IconBetterIdeaService getIconService() {

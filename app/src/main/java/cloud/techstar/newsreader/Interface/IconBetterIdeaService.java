@@ -9,7 +9,7 @@ import retrofit2.http.Url;
  * Created by Doljko on 3/22/2018.
  */
 
-public interface IcomBetterService {
+public interface IconBetterIdeaService {
     @GET
     Call<IconBetterIdea> getIconUrl(@Url String url);
 }

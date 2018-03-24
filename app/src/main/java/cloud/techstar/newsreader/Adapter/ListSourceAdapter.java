@@ -16,8 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by Doljko on 3/22/2018.
  */
 
-class ListSourceViewHolder extends RecyclerView.ViewHolder
-    implements View.OnClickListener
+class ListSourceViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
     ItemClickListener itemClickListener;
 
@@ -42,15 +41,16 @@ class ListSourceViewHolder extends RecyclerView.ViewHolder
     }
 }
 
-    public class ListSourceAdapter extends RecyclerView.Adapter<ListSourceViewHolder>{
-            private Context context;
-            private WebSite webSite;
+public class ListSourceAdapter extends RecyclerView.Adapter<ListSourceViewHolder>{
+    private Context context;
+    private WebSite webSite;
 
-        public ListSourceAdapter(Context baseContext, WebSite webSite) {
-        }
+    public ListSourceAdapter(Context baseContext, WebSite webSite) {
+        this.context = baseContext;
+        this.webSite = webSite;
+    }
 
-
-        @Override
+    @Override
     public ListSourceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.sourse_layout, parent,false);
