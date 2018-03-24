@@ -11,5 +11,5 @@ import retrofit2.http.GET;
 
 public interface NewsService {
     @GET("v2/sources?language=en&apiKey="+ Common.API_KEY)
-    Call<WebSite> getSource();
+    Call<WebSite> getSources();
 }
