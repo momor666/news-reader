@@ -33,7 +33,7 @@ class UrlsToLogos{
         this.large = large;
     }
 }
-public class Source {
+public class Sources {
     private String id;
     private String name;
     private  String description;
@@ -44,10 +44,10 @@ public class Source {
     private  UrlsToLogos urlsToLogos;
     private  List<String> sortBysAvailable;
 
-    public Source() {
+    public Sources() {
     }
 
-    public Source(String id, String name, String description, String url, String category, String language, String country, UrlsToLogos urlsToLogos, List<String> sortBysAvailable) {
+    public Sources(String id, String name, String description, String url, String category, String language, String country, UrlsToLogos urlsToLogos, List<String> sortBysAvailable) {
         this.id = id;
         this.name = name;
         this.description = description;

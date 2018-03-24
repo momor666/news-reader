@@ -38,7 +38,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Paper.init(this);
+
         mService = Common.getNewsService();
+
+        swipeLayout = (SwipeRefreshLayout)findViewById(R.id.swipeLayout);
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadWebsiteSource(true);
+            }
+        });
         listWebsite = (RecyclerView) findViewById(R.id.list_source);
         layoutManager = new LinearLayoutManager(this);
         listWebsite.setLayoutManager(layoutManager);
@@ -79,11 +88,24 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         } else {
-            adapter = new ListSourceAdapter(getBaseContext(),response.body());
-            adapter.notifyDataSetChanged();
-            listWebsite.setAdapter(adapter);
+            dialog.show();
+            mService.getSource().enqueue(new Callback<WebSite>() {
+                @Override
+                public void onResponse(Call<WebSite> call, Response<WebSite> response) {
+                    adapter = new ListSourceAdapter(getBaseContext(),response.body());
+                    adapter.notifyDataSetChanged();
+                    listWebsite.setAdapter(adapter);
 
-            Paper.book().write("cache", new Gson().toJson(response.body()));
+                    Paper.book().write("cache", new Gson().toJson(response.body()));
+
+                    swipeLayout.setRefreshing(false);
+                }
+
+                @Override
+                public void onFailure(Call<WebSite> call, Throwable t) {
+
+                }
+            });
         }
     }
 }
