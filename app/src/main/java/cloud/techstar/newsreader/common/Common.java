@@ -10,9 +10,9 @@ import cloud.techstar.newsreader.remote.IconBetterIdeaClient;
  */
 
 public class Common {
-    private static final String BASE_URL="https://newsapi.org/";
+    private static final String BASE_URL= "https://newsapi.org/";
 
-    public static final String API_KEY="5ed360f8134e41faa2eaee8b0aafd08b";
+    public static final String API_KEY = "5ed360f8134e41faa2eaee8b0aafd08b";
 
     public static NewsService getNewsService()
     {

@@ -103,7 +103,7 @@ public class ListSourceAdapter extends RecyclerView.Adapter<ListSourceViewHolder
         viewHolder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-                
+
             }
         });
     }

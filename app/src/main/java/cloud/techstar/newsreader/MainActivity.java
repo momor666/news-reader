@@ -5,6 +5,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -77,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                         adapter = new ListSourceAdapter(getBaseContext(),response.body());
                         adapter.notifyDataSetChanged();
                         listWebsite.setAdapter(adapter);
+
+                        Log.e("NEWS: ", response.body().toString());
 
                         Paper.book().write("cache", new Gson().toJson(response.body()));
                     }

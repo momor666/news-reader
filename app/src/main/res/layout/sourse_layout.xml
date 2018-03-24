@@ -2,12 +2,11 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_margin="8dp"
     app:cardElevation="8dp"
-    tools:ignore="NamespaceTypo">
+    >
 
     <LinearLayout
         android:orientation="horizontal"
@@ -18,16 +17,22 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/source_image"
-            android:scaleType="center"
+            android:layout_weight="2"
+            android:scaleType="centerCrop"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <TextView
-                android:id="@+id/source_name"
-                android:layout_width="0dp"
-                android:textStyle="bold"
-                android:layout_weight="8"
-                android:layout_height="wrap_content" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/source_name"
+            android:layout_weight="8"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
+
 
 </android.support.v7.widget.CardView>
