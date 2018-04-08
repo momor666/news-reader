@@ -1,12 +1,17 @@
 package cloud.techstar.newsreader.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
+import cloud.techstar.newsreader.ListNews;
 import cloud.techstar.newsreader.common.Common;
 import cloud.techstar.newsreader.interfaces.IconBetterIdeaService;
 import cloud.techstar.newsreader.interfaces.ItemClickListener;
@@ -30,10 +35,12 @@ class ListSourceViewHolder extends RecyclerView.ViewHolder implements View.OnCli
         source_image=(CircleImageView) itemView.findViewById(R.id.source_image);
         source_title=(TextView) itemView.findViewById(R.id.source_name);
         itemView.setOnClickListener(this);
+
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener){
         this.itemClickListener = itemClickListener;
+
     }
 
     @Override
@@ -71,7 +78,11 @@ public class ListSourceAdapter extends RecyclerView.Adapter<ListSourceViewHolder
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-
+                Intent intent = new Intent(context, ListNews.class);
+                intent.putExtra("source", webSite.getSources().get(position).getId());
+                intent.putExtra("sortBy", webSite.getSources().get(position).getSortBysAvailable().get(0));
+                //get method sortbyavailable
+                context.startActivity(intent);
             }
         });
 
