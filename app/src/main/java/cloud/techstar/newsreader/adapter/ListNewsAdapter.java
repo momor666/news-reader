@@ -16,7 +16,8 @@ import java.util.Date;
 import java.util.List;
 
 import cloud.techstar.newsreader.ListNews;
-import cloud.techstar.newsreader.common.ISO8601DateParser;
+import cloud.techstar.newsreader.R;
+import cloud.techstar.newsreader.common.ISO8601Parse;
 import cloud.techstar.newsreader.interfaces.ItemClickListener;
 import cloud.techstar.newsreader.models.Article;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -83,7 +84,7 @@ public class ListNewsAdapter extends RecyclerView.Adapter<ListNewsViewHolder> {
 
         Date date = null;
         try {
-            date = ISO8601DateParser.parse(articleList.get(position).getPublishedAt());
+            date = ISO8601Parse.parse(articleList.get(position).getPublishedAt());
         } catch (ParseException ex) {
             ex.printStackTrace();
         }

@@ -19,9 +19,11 @@
             app:diagonal_direction="left"
             app:diagonal_position="bottom">
             <com.flaviofaria.kenburnsview.KenBurnsView
+                android:id="@+id/top_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
