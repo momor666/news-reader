@@ -41,13 +41,11 @@ public class Sources {
     private  String category;
     private  String language;
     private  String country;
-    private  UrlsToLogos urlsToLogos;
-    private  List<String> sortBysAvailable;
 
     public Sources() {
     }
 
-    public Sources(String id, String name, String description, String url, String category, String language, String country, UrlsToLogos urlsToLogos, List<String> sortBysAvailable) {
+    public Sources(String id, String name, String description, String url, String category, String language, String country) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -55,8 +53,6 @@ public class Sources {
         this.category = category;
         this.language = language;
         this.country = country;
-        this.urlsToLogos = urlsToLogos;
-        this.sortBysAvailable = sortBysAvailable;
     }
 
     public String getId() {
@@ -115,19 +111,4 @@ public class Sources {
         this.country = country;
     }
 
-    public UrlsToLogos getUrlsToLogos() {
-        return urlsToLogos;
-    }
-
-    public void setUrlsToLogos(UrlsToLogos urlsToLogos) {
-        this.urlsToLogos = urlsToLogos;
-    }
-
-    public List<String> getSortBysAvailable() {
-        return sortBysAvailable;
-    }
-
-    public void setSortBysAvailable(List<String> sortBysAvailable) {
-        this.sortBysAvailable = sortBysAvailable;
-    }
 }

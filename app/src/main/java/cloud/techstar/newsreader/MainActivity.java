@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
             }
             else // If not have cache
             {
-                dialog.show();
+
+                swipeLayout.setRefreshing(false);
                 //Fetch new data
                 mService.getSources().enqueue(new Callback<WebSite>() {
                     @Override
@@ -91,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                         //Save to cache
                         Paper.book().write("cache",new Gson().toJson(response.body()));
 
-                        dialog.dismiss();
 
                     }
 
