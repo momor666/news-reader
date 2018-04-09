@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.util.SortedList;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,8 +16,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import cloud.techstar.newsreader.DetailArticle;
-import cloud.techstar.newsreader.R;
 import cloud.techstar.newsreader.adapter.ListNewsAdapter;
 import cloud.techstar.newsreader.common.Common;
 import cloud.techstar.newsreader.interfaces.NewsService;
@@ -26,7 +23,9 @@ import cloud.techstar.newsreader.models.Article;
 import cloud.techstar.newsreader.models.News;
 import dmax.dialog.SpotsDialog;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class ListNews extends AppCompatActivity {
 
@@ -97,7 +96,7 @@ public class ListNews extends AppCompatActivity {
         {
             dialog.show();
             mService.getNewestArticles(Common.getAPIUrl(source,sortBy,Common.API_KEY))
-                    .enqueue(new SortedList.Callback<News>() {
+                    .enqueue(new Callback<News>() {
                         @Override
                         public void onResponse(Call<News> call, Response<News> response) {
                             dialog.dismiss();
@@ -132,7 +131,7 @@ public class ListNews extends AppCompatActivity {
         {
             dialog.show();
             mService.getNewestArticles(Common.getAPIUrl(source,sortBy,Common.API_KEY))
-                    .enqueue(new SortedList.Callback<News>() {
+                    .enqueue(new Callback<News>() {
                         @Override
                         public void onResponse(Call<News> call, Response<News> response) {
                             dialog.dismiss();
